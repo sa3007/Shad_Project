@@ -183,9 +183,7 @@ def load_checkpoint(path='checkpoint.pth'):
     return model
 
 
-def process_image(image_path='/home/workspace/aipnd-project/flowers/test/1/image_06752.jpg'):
-
-
+def process_image(image_path='/home/workspace/ImageClassifier/flowers/test/102/image_08012.jpg'):
     proc_img = Image.open(image_path)
 
     prepoceess_img = transforms.Compose([
@@ -200,7 +198,7 @@ def process_image(image_path='/home/workspace/aipnd-project/flowers/test/1/image
     return pymodel_img
 
 
-def predict(image='/home/workspace/aipnd-project/flowers/test/1/image_06752.jpg', model=0, topk=5,device='gpu'):
+def predict(image='/home/workspace/ImageClassifier/flowers/test/102/image_08012.jpg', model=0, topk=5,device='gpu'):
 
     if torch.cuda.is_available() and device =='gpu':
         model.to('cuda')
